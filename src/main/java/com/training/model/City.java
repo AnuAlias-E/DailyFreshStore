@@ -29,6 +29,6 @@ public class City {
 	private int cityId;
 
 	@Column
-	@NotBlank(message = "City name is mandatory")
+	//@NotBlank(message = "City name is mandatory")
 	private String name;
 }

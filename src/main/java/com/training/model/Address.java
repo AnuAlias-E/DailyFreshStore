@@ -31,7 +31,7 @@ public class Address {
 	private int addressId;
 
 	@Column
-	@NotBlank(message = "Name is mandatory")
+	//@NotBlank(message = "Name is mandatory")
 	private String storeName;
 
 	@Column

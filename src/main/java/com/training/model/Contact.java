@@ -30,7 +30,7 @@ public class Contact {
 	private int contactId;
 
 	@Column
-	@NotBlank(message = "Name is mandatory")
+	//@NotBlank(message = "Name is mandatory")
 	private String name;
 
 	@Column

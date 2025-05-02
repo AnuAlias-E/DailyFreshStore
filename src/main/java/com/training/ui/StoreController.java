@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.training.dto.request.StoreAddRequest;
 import com.training.dto.request.StoreUpdateRequest;
 import com.training.dto.response.StoreAddResponse;
 import com.training.dto.response.StoreSearchResponse;
@@ -33,10 +34,10 @@ public class StoreController {
 	StoreService service;
 
 	@PostMapping(value = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<StoreAddResponse> addNewStore(@Valid @RequestBody StoreAddResponse request) {
+	public ResponseEntity<StoreAddResponse> addNewStore(@Valid @RequestBody StoreAddRequest request) {
 		StoreAddResponse response = new StoreAddResponse();
 		Store store = service.addNewStore(request.getStore());
-		response.setStatusCode(201);
+		response.setStatusCode(HttpStatus.CREATED.value());
 		response.setDescription("Store Added Successfully");
 		response.setStore(store);
 
